@@ -1,4 +1,4 @@
-# Verdandi API
+# Délectable API
 
 ## Installation
 
