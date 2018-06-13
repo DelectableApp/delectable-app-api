@@ -4,7 +4,7 @@
 
 ```bash
 # Cloner le repo en local
-https://github.com/DelectableApp/delectable-app-api.git
+git clone https://github.com/DelectableApp/delectable-app-api.git
 cd delectable-app-api
 # Configurer git flow en local
 git flow init
