@@ -3,10 +3,9 @@
 ## Installation
 
 ```bash
-Installation
 # Cloner le repo en local
-git clone https://github.com/M4SS1V3S3R0T0N14/verdandi-api.git
-cd verdandi-api
+https://github.com/DelectableApp/delectable-app-api.git
+cd delectable-app-api
 # Configurer git flow en local
 git flow init
 # Copier et renommer le fichier .env.example en .env
