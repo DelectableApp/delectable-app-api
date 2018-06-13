@@ -13,6 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/', function (Request $request) {
+Route::middleware('api')->get('/', function (Request $request) {
     return ['msg' => 'hello world !!! :D'];
 });
