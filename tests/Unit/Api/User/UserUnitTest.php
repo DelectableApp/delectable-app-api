@@ -19,11 +19,12 @@ class UserUnitTest extends TestCase
 
     public function test_create_user_entity()
     {
+        echo "\n".__FUNCTION__."\n\n";
         $data = [
-            'user_first_name' => 'Test',
-            'user_last_name' => 'Test',
-            'user_address' => '14 rue du Vaugueux',
-            'user_gender' => 'homme',
+            'user_first_name' => 'Test_user_first_name',
+            'user_last_name' => 'Test_user_last_name',
+            'user_address' => 'Test_user_address',
+            'user_gender' => 'Test_user_gender',
             'user_birth_date' => 'test@test.com',
             'user_phone' => '06060606',
             'user_email' => 'test@test.com',
@@ -56,5 +57,8 @@ class UserUnitTest extends TestCase
         $this->assertEquals($data['country_id'], $user->country_id);
         $this->assertEquals($data['language_id'], $user->language_id);
         $this->assertEquals($data['role_id'], $user->role_id);
+
+        $results=$user;
+        echo json_encode($results, JSON_PRETTY_PRINT);
     }
 }

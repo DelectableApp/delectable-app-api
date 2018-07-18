@@ -13,10 +13,14 @@ class GeneralRouteTest extends TestCase
      * @return void
      */
 
-        public function test_get_experiences()
+        public function test_route_general()
     {
+        echo "\n".__FUNCTION__."\n\n";
         $response = $this->call('GET', 'http://localhost:8000/api');
         $response->assertStatus(200);
+
+
+        echo json_encode($response, JSON_PRETTY_PRINT);
     }
 
 
