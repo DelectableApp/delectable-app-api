@@ -24,16 +24,16 @@ class CreateUsersTable extends Migration
             $table->string('user_phone')->nullable();
             $table->string('user_email')->unique();
             $table->string('user_login')->unique();
-            $table->string('user_avatar')->nullable();;
-            $table->string('user_description')->nullable();;
-            $table->string('user_slug')->nullable();;
+            $table->string('user_description')->nullable();
+            $table->string('user_slug')->nullable();
             $table->nullableTimestamps();
             $table->string('password');
             $table->rememberToken();
 
-            $table->unsignedInteger('country_id');
+            //FK
+            $table->unsignedInteger('country_id')->nullable();
             $table->foreign('country_id')->references('country_id')->on('countries')->onDelete('cascade');
-            $table->unsignedInteger('language_id');
+            $table->unsignedInteger('language_id')->nullable();
             $table->foreign('language_id')->references('language_id')->on('languages')->onDelete('cascade');
             $table->unsignedInteger('role_id')->default(Role::USER);
             $table->foreign('role_id')->references('role_id')->on('roles')->onDelete('cascade');

@@ -19,6 +19,7 @@ class CreateCountriesTable extends Migration
             $table->string('country_legal_age');
             $table->nullableTimestamps();
 
+            //FK
             $table->unsignedInteger('continent_id');
             $table->foreign('continent_id')->references('continent_id')->on('continents')->onDelete('cascade');
         });
