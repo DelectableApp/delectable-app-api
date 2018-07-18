@@ -12,7 +12,7 @@ namespace App\Entities\I18n;
 class Country
 {
 
-
+    public $timestamps = true;
     protected $fillable = [
         'country_name',
         'country_legal_age',

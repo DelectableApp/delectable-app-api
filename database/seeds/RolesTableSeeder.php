@@ -17,12 +17,12 @@ class RolesTableSeeder extends Seeder
             'role_name' => Role::ADMIN_LABEL,
         ]);
         Role::create([
-            'role_id' => Role::MODERATEUR,
-            'role_name' => Role::MODERATEUR_LABEL,
+            'role_id' => Role::MODERATOR,
+            'role_name' => Role::MODERATOR_LABEL,
         ]);
         Role::create([
-            'role_id' => Role::CONTRIBUTEUR,
-            'role_name' => Role::CONTRIBUTEUR_LABEL,
+            'role_id' => Role::CONTRIBUTOR,
+            'role_name' => Role::CONTRIBUTOR_LABEL,
         ]);
         Role::create([
             'role_id' => Role::VERIFIEDUSER,

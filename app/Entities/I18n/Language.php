@@ -13,6 +13,7 @@ use App\User;
 
 class Language
 {
+    public $timestamps = true;
     protected $fillable = [
         'language_name',
         'language_read_direction',

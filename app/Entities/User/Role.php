@@ -5,10 +5,10 @@ class Role extends Model
 {
     const ADMIN = 1;
     const ADMIN_LABEL = 'ADMIN';
-    const MODERATEUR = 2;
-    const MODERATEUR_LABEL = 'MODERATEUR';
-    const CONTRIBUTEUR = 4;
-    const CONTRIBUTEUR_LABEL = 'CONTRIBUTEUR';
+    const MODERATOR = 2;
+    const MODERATOR_LABEL = 'MODERATOR';
+    const CONTRIBUTOR = 4;
+    const CONTRIBUTOR_LABEL = 'CONTRIBUTOR';
     const VERIFIEDUSER = 5;
     const VERIFIEDUSER_LABEL = 'VERIFIEDUSER';
     const USER = 6;

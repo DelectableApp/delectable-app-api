@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Entities\Asset\Image;
 use App\Entities\I18n\Country;
 use App\Entities\I18n\Language;
 use App\Entities\User\Role;
@@ -29,6 +30,7 @@ class User extends Authenticatable
         'user_phone',
         'user_email',
         'user_login',
+        'password',
         'user_avatar',
         'user_description',
         'user_slug',
@@ -47,6 +49,10 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function avatar()
+    {
+        return $this->belongsTo(Image::class, 'image_id');
+    }
     public function country()
     {
         return $this->belongsTo(Country::class, 'country_id');
@@ -59,6 +65,7 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class, 'role_id');
     }
+
 
     public function setCountry($country_id)
     {

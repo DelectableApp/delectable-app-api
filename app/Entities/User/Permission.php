@@ -11,5 +11,10 @@ namespace App\Entities\User;
 
 class Permission
 {
+    public $timestamps = true;
+    protected $fillable = [
+        'permission_name',
+
+    ];
 
 }
