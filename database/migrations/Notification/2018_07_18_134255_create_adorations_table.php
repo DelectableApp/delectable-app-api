@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+/**Table des likes
+ * Appelé adoration pour éviter toute confusion avec le terme SQL LIKE
+ **/
 class CreateAdorationsTable extends Migration
 {
     /**

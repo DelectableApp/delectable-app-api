@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+/**Table des collections
+ * Contien l'enssemble des collections (propre à l'utilisateur)
+ **/
 class CreateCollectionsTable extends Migration
 {
     /**

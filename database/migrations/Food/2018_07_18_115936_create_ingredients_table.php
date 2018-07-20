@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+/**Table des ingrédients
+ * Contient l'enssemble des ingrédients(dirrectement liée à la table des type d'ingrédients).
+ **/
 class CreateIngredientsTable extends Migration
 {
     /**

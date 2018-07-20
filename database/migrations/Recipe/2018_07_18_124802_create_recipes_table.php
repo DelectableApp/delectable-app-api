@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+/**Table des recettes
+ * Contient l'enssemble des recettes.
+ * Le champ isPublic signale si la recette est rendu publique ou si elle reste privée pour l'utilisateur(recette en cours de création)
+ **/
 class CreateRecipesTable extends Migration
 {
     /**

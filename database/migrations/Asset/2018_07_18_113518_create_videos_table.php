@@ -3,7 +3,12 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+/**Table des videos
+ * Contient l'enssemble des videos.
+ * Un champ user_id est présent pour identifier le user emmeteur de la video.
+ * Le champ isValid permet de signaler si la video à été "vérifiée"(par défaut, non vérifiée)
+ * Le champ image_id représente l'image de mignature de la video
+ **/
 class CreateVideosTable extends Migration
 {
     /**

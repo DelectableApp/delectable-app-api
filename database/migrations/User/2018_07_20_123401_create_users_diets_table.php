@@ -3,10 +3,9 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-/**Table de liaison entre les utilisateurs et les menus
- * permettant aux utilisateurs de créer des menu en commun
+/**Table de liaison entre les utilisateurs et les régimes alimentaires
  **/
-class CreateUsersMenusTable extends Migration
+class CreateUsersDietsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,12 +14,12 @@ class CreateUsersMenusTable extends Migration
      */
     public function up()
     {
-        Schema::create('users_menus', function (Blueprint $table) {
+        Schema::create('users_diets', function (Blueprint $table) {
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
-            $table->unsignedInteger('menu_id');
-            $table->foreign('menu_id')->references('menu_id')->on('menus')->onDelete('cascade');
-            $table->primary(['user_id', 'menu_id']);
+            $table->unsignedInteger('diet_id');
+            $table->foreign('diet_id')->references('diet_id')->on('diets')->onDelete('cascade');
+            $table->primary(['user_id', 'diet_id']);
             $table->nullableTimestamps();
         });
     }
@@ -32,6 +31,6 @@ class CreateUsersMenusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_menus');
+        Schema::dropIfExists('users_diets');
     }
 }

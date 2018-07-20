@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+/**Table des type d'ingrédients
+ * Contient les différents type d'ingrédients (viande,légume...)
+ **/
 class CreateIngredientsTypesTable extends Migration
 {
     /**

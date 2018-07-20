@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+/**Table des ustensiles
+ * Contient l'enssemble des ustensiles
+ **/
 class CreateUtensilsTable extends Migration
 {
     /**

@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+/**Table des menus
+ * Contient l'enssemble des menus.
+ * Relié à une table de liaison avec les users pour les menus réalisés à plusieurs
+ **/
 class CreateMenusTable extends Migration
 {
     /**

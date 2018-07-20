@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+/**Table des catégories
+ * Contient l'enssemble des catégories (definie par les admins).
+ **/
 class CreateCategoriesTable extends Migration
 {
     /**

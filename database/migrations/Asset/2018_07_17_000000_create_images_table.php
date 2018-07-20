@@ -3,6 +3,12 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+/**Table des images
+ * Contient l'enssemble des images.
+ * Un champ user_id est présent pour identifier le user emmeteur de l'image.
+ * L'image du user(photo de profil) est quand à elle référencée dans le champ user_avatar de la table users
+ * Le champ isValid permet de signaler si l'image à été "vérifiée"(par défaut, non vérifiée)
+ **/
 
 class CreateImagesTable extends Migration
 {
