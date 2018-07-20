@@ -21,13 +21,14 @@ class CreateTagsTable extends Migration
             $table->nullableTimestamps();
 
             //FK
-            $table->unsignedInteger('collection_id')->nullable();
-            $table->foreign('collection_id')->references('collection_id')->on('collections')->onDelete('cascade');
             $table->unsignedInteger('menu_id')->nullable();
             $table->foreign('menu_id')->references('menu_id')->on('menus')->onDelete('cascade');
             $table->unsignedInteger('recipe_id')->nullable();
             $table->foreign('recipe_id')->references('recipe_id')->on('recipes')->onDelete('cascade');
-
+            $table->unsignedInteger('collection_id')->nullable();
+            $table->foreign('collection_id')->references('collection_id')->on('collections')->onDelete('cascade');
+            $table->unsignedInteger('category_id')->nullable();
+            $table->foreign('category_id')->references('category_id')->on('categories')->onDelete('cascade');
         });
     }
 
