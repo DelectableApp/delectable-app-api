@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 /**Table des régimes
- * Contient les différents régimes alimentaires (végérarien,végétalien...)
+ * Contient les différents régimes alimentaires (végérarien,végétalien...
+ * )
  **/
 class CreateDietsTable extends Migration
 {

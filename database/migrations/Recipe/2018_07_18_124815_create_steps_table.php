@@ -29,6 +29,8 @@ class CreateStepsTable extends Migration
             //FK
             $table->unsignedInteger('recipe_id');
             $table->foreign('recipe_id')->references('recipe_id')->on('recipes')->onDelete('cascade');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
         });
     }
 

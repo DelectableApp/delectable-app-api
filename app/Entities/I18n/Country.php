@@ -16,7 +16,8 @@ class Country
     protected $fillable = [
         'country_name',
         'country_legal_age',
-        'continent_id'
+        //FK
+        'continent_id',
 
     ];
     public function continent()

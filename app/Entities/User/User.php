@@ -34,6 +34,7 @@ class User extends Authenticatable
         'user_avatar',
         'user_description',
         'user_slug',
+        //FK
         'country_id',
         'language_id',
         'role_id',
@@ -64,6 +65,26 @@ class User extends Authenticatable
     public function role()
     {
         return $this->belongsTo(Role::class, 'role_id');
+    }
+    public function video()
+    {
+        return $this->belongsTo(Video::class, 'video_id');
+    }
+    public function adoration()
+    {
+        return $this->belongsTo(Adoration::class, 'adoration_id');
+    }
+    public function collection()
+    {
+        return $this->belongsTo(Collection::class, 'collection_id');
+    }
+    public function recipe()
+    {
+        return $this->belongsTo(Recipe::class, 'recipe_id');
+    }
+    public function step()
+    {
+        return $this->belongsTo(Step::class, 'step_id');
     }
 
 
