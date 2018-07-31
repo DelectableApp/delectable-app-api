@@ -9,7 +9,10 @@
 namespace App\Entities\Recipe;
 
 
-class Category
+use App\Entities\Asset\Image;
+use Illuminate\Database\Eloquent\Model;
+
+class Category extends Model
 {
     public $timestamps = false;
 
@@ -33,5 +36,6 @@ class Category
     {
         return $this->image()->sync($image);
     }
+
 }
 

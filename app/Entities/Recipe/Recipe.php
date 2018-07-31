@@ -9,7 +9,11 @@
 namespace App\Entities\Recipe;
 
 
-class Recipe
+use App\Entities\Asset\Image;
+use App\User;
+use Illuminate\Database\Eloquent\Model;
+
+class Recipe extends Model
 {
     public $timestamps = false;
 
@@ -34,10 +38,6 @@ class Recipe
     {
         return $this->belongsTo(Image::class, 'image_id');
     }
-    public function step()
-    {
-        return $this->belongsTo(Step::class, 'step_id');
-    }
 
     public function setuser($user)
     {
@@ -47,6 +47,21 @@ class Recipe
     {
         return $this->image()->sync($image);
     }
-
+    public function steps()
+    {
+        return $this->belongsToMany(Step::class, 'recipes_steps', 'recipe_id', 'step_id');
+    }
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'recipes_categories', 'recipe_id', 'category_id');
+    }
+    public function menus()
+    {
+        return $this->belongsToMany(Menu::class, 'recipes_menus', 'recipe_id', 'menu_id');
+    }
+    public function collections()
+    {
+        return $this->belongsToMany(Collection::class, 'recipes_collections', 'recipe_id', 'collection_id');
+    }
 }
 

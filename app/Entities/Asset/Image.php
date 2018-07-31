@@ -9,10 +9,16 @@
 namespace App\Entities\Asset;
 
 
+use App\Entities\Food\Ingredient;
+use App\Entities\Food\IngredientType;
+use App\Entities\Food\Utensil;
 use App\Entities\Recipe\Category;
+use App\Entities\Recipe\Menu;
+use App\Entities\Recipe\Recipe;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User;
 
-class Image
+class Image extends Model
 {
     public $timestamps = false;
 
@@ -26,16 +32,19 @@ class Image
         'image_isValid',
         //FK
         'user_id',
+        'ingredient_type_id',
+        'ingredient_id',
+        'utensil_id',
+        'category_id',
+        'menu_id',
+        'recipe_id',
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
-    public function video()
-    {
-        return $this->belongsTo(Video::class, 'video_id');
-    }
+
     public function ingredient_type()
     {
         return $this->belongsTo(IngredientType::class, 'ingredient_type_id');

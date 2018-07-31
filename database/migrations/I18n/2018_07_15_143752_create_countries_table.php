@@ -17,7 +17,7 @@ class CreateCountriesTable extends Migration
         Schema::create('countries', function (Blueprint $table) {
             $table->increments('country_id');
             $table->string('country_name')->unique();
-            $table->string('country_legal_age');
+            $table->integer('country_legal_age');
             $table->nullableTimestamps();
 
             //FK

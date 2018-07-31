@@ -9,7 +9,11 @@
 namespace App\Entities\Food;
 
 
-class Utensil
+use App\Entities\Asset\Image;
+use App\Entities\Recipe\Step;
+use Illuminate\Database\Eloquent\Model;
+
+class Utensil extends Model
 {
     public $timestamps = false;
 
@@ -30,5 +34,9 @@ class Utensil
     public function setimage($image)
     {
         return $this->image()->sync($image);
+    }
+    public function steps()
+    {
+        return $this->belongsToMany(Step::class, 'steps_utensils', 'utensil_id', 'step_id');
     }
 }

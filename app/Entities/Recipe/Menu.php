@@ -9,7 +9,10 @@
 namespace App\Entities\Recipe;
 
 
-class Menu
+use App\Entities\Asset\Image;
+use Illuminate\Database\Eloquent\Model;
+
+class Menu extends Model
 {
     public $timestamps = false;
 
@@ -32,4 +35,17 @@ class Menu
     {
         return $this->image()->sync($image);
     }
+    public function collections()
+    {
+        return $this->belongsToMany(Collection::class, 'menus_collections', 'menu_id', 'collection_id');
+    }
+    public function recipes()
+    {
+        return $this->belongsToMany(Recipe::class, 'recipes_menus', 'menu_id', 'recipe_id');
+    }
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'users_menus', 'menu_id', 'user_id');
+    }
+
 }

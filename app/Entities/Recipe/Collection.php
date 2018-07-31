@@ -9,7 +9,10 @@
 namespace App\Entities\Recipe;
 
 
-class Collection
+use App\User;
+use Illuminate\Database\Eloquent\Model;
+
+class Collection extends Model
 {
     public $timestamps = false;
 
@@ -32,5 +35,13 @@ class Collection
     public function setuser($user)
     {
         return $this->user()->sync($user);
+    }
+    public function menus()
+    {
+        return $this->belongsToMany(Menu::class, 'menus_collections', 'collection_id', 'menu_id');
+    }
+    public function recipes()
+    {
+        return $this->belongsToMany(Recipe::class, 'recipes_collections', 'collection_id', 'recipe_id');
     }
 }

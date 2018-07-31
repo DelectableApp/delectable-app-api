@@ -9,7 +9,11 @@
 namespace App\Entities\Food;
 
 
-class Ingredient
+use App\Entities\Asset\Image;
+use App\Entities\Recipe\Step;
+use Illuminate\Database\Eloquent\Model;
+
+class Ingredient extends Model
 {
     public $timestamps = false;
 
@@ -40,6 +44,14 @@ class Ingredient
     public function setingredient_type($ingredient_type)
     {
         return $this->ingredient_type()->sync($ingredient_type);
+    }
+    public function constraints()
+    {
+        return $this->belongsToMany(Constraint::class, 'ingredients_constraints', 'ingredient_id', 'constraint_id');
+    }
+    public function steps()
+    {
+        return $this->belongsToMany(Step::class, 'steps_ingredients', 'ingredient_id', 'step_id');
     }
 }
 

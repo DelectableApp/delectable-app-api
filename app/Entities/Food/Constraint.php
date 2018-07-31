@@ -9,7 +9,9 @@
 namespace App\Entities\Food;
 
 
-class Constraint
+use Illuminate\Database\Eloquent\Model;
+
+class Constraint extends Model
 {
     public $timestamps = false;
 
@@ -20,4 +22,13 @@ class Constraint
     protected $fillable = [
         'constraint_name',
     ];
+
+    public function ingredients()
+    {
+        return $this->belongsToMany(Ingredient::class, 'ingredients_constraints', 'constraint_id', 'ingredient_id');
+    }
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'users_constraints', 'constraint_id', 'user_id');
+    }
 }

@@ -9,7 +9,10 @@
 namespace App\Entities\Food;
 
 
-class IngredientType
+use App\Entities\Asset\Image;
+use Illuminate\Database\Eloquent\Model;
+
+class IngredientType extends Model
 {
     public $timestamps = false;
 
@@ -19,6 +22,7 @@ class IngredientType
 
     protected $fillable = [
         'ingredient_type_name',
+        //FK
         'image_id',
     ];
 
@@ -26,12 +30,13 @@ class IngredientType
     {
         return $this->belongsTo(Image::class, 'image_id');
     }
-    public function ingredient()
-    {
-        return $this->belongsTo(Ingredient::class, 'ingredient_id');
-    }
+
     public function setimage($image)
     {
         return $this->image()->sync($image);
+    }
+    public function diets()
+    {
+        return $this->belongsToMany(Diet::class, 'ingredients_types_diets', 'ingredient_type_id', 'diet_id');
     }
 }

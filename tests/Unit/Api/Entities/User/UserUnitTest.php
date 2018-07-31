@@ -30,12 +30,12 @@ class UserUnitTest extends TestCase
             'user_email' => 'test@test.com',
             'user_login' => 'test.test',
             'password' => Hash::make('test'),
-            'user_avatar' => '',
+            'user_avatar' => 42,
             'user_description' => 'test description',
             'user_slug' => 'test slug',
-            'country_id' => '',
-            'language_id' => '',
-            'role_id' => Role::ADMIN,
+            'country_id' => 42,
+            'language_id' => 42,
+            'role_id' => 42,
         ];
 
 

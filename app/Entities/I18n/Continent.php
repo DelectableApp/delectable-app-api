@@ -9,7 +9,9 @@
 namespace App\Entities\I18n;
 
 
-class Continent
+use Illuminate\Database\Eloquent\Model;
+
+class Continent extends Model
 {
     public $timestamps = true;
     protected $fillable = [

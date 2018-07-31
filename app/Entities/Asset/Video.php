@@ -9,7 +9,10 @@
 namespace App\Entities\Asset;
 
 
-class Video
+use App\User;
+use Illuminate\Database\Eloquent\Model;
+
+class Video extends Model
 {
     public $timestamps = false;
 

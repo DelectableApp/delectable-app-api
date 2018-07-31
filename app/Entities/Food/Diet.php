@@ -9,7 +9,10 @@
 namespace App\Entities\Food;
 
 
-class Diet
+use App\User;
+use Illuminate\Database\Eloquent\Model;
+
+class Diet extends Model
 {
     public $timestamps = false;
 
@@ -20,5 +23,12 @@ class Diet
     protected $fillable = [
         'diet_name',
     ];
-
+    public function ingredients_types()
+    {
+        return $this->belongsToMany(IngredientType::class, 'ingredients_types_diets', 'diet_id', 'ingredient_type_id');
+    }
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'users_diets', 'diet_id', 'user_id');
+    }
 }

@@ -31,10 +31,10 @@ class User extends Authenticatable
         'user_email',
         'user_login',
         'password',
-        'user_avatar',
         'user_description',
         'user_slug',
         //FK
+        'user_avatar',
         'country_id',
         'language_id',
         'role_id',
@@ -48,8 +48,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'remember_token',
     ];
-
     public function avatar()
     {
         return $this->belongsTo(Image::class, 'image_id');
@@ -66,28 +66,25 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class, 'role_id');
     }
-    public function video()
-    {
-        return $this->belongsTo(Video::class, 'video_id');
-    }
-    public function adoration()
-    {
-        return $this->belongsTo(Adoration::class, 'adoration_id');
-    }
-    public function collection()
-    {
-        return $this->belongsTo(Collection::class, 'collection_id');
-    }
-    public function recipe()
-    {
-        return $this->belongsTo(Recipe::class, 'recipe_id');
-    }
-    public function step()
-    {
-        return $this->belongsTo(Step::class, 'step_id');
-    }
 
 
+    public function menus()
+    {
+        return $this->belongsToMany(Menu::class, 'users_menus', 'user_id', 'menu_id');
+    }
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'users_categories', 'user_id', 'category_id');
+    }
+    public function constraints()
+    {
+        return $this->belongsToMany(Constraint::class, 'users_constraints', 'user_id', 'constraint_id');
+    }
+
+    public function setAvatar($user_avatar)
+    {
+        return $this->avatar()->associate($user_avatar);
+    }
     public function setCountry($country_id)
     {
         return $this->country()->associate($country_id);

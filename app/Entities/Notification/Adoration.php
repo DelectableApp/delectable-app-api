@@ -9,7 +9,12 @@
 namespace App\Entities\Notification;
 
 
-class Adoration
+use App\Entities\Recipe\Menu;
+use App\Entities\Recipe\Recipe;
+use App\User;
+use Illuminate\Database\Eloquent\Model;
+
+class Adoration extends Model
 {
     public $timestamps = false;
 

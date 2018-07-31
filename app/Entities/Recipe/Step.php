@@ -9,7 +9,12 @@
 namespace App\Entities\Recipe;
 
 
-class Step
+use App\Entities\Food\Ingredient;
+use App\Entities\Food\Utensil;
+use App\User;
+use Illuminate\Database\Eloquent\Model;
+
+class Step extends Model
 {
     public $timestamps = false;
 
@@ -43,6 +48,17 @@ class Step
     {
         return $this->user()->sync($user);
     }
-
+    public function utensils()
+    {
+        return $this->belongsToMany(Utensil::class, 'steps_utensils', 'step_id', 'utensil_id');
+    }
+    public function ingredients()
+    {
+        return $this->belongsToMany(Ingredient::class, 'steps_ingredients', 'step_id', 'ingredient_id');
+    }
+    public function recipes()
+    {
+        return $this->belongsToMany(Recipe::class, 'recipes_steps', 'step_id', 'recipe_id');
+    }
 
 }

@@ -9,7 +9,13 @@
 namespace App\Entities\Notification;
 
 
-class Tag
+use App\Entities\Recipe\Category;
+use App\Entities\Recipe\Collection;
+use App\Entities\Recipe\Menu;
+use App\Entities\Recipe\Recipe;
+use Illuminate\Database\Eloquent\Model;
+
+class Tag extends Model
 {
     public $timestamps = false;
 

@@ -10,8 +10,9 @@ namespace App\Entities\I18n;
 
 
 use App\User;
+use Illuminate\Database\Eloquent\Model;
 
-class Language
+class Language extends Model
 {
     public $timestamps = true;
     protected $fillable = [
