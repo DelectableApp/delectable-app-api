@@ -14,9 +14,14 @@ composer install
 # Génerer une clé
 php artisan key:generate
 # Lancer la migration et le seed de la base de données
-php artisan migrate --seed
-# Installer passeport pour l'oauth2
-php artisan passport:install
+# La première effectue les migrations générales des tables oauth et la seconde effectue celles des sous dossiers.
+php artisan migrate:fresh && php artisan migrate --path="database/migrations/*" --seed && php artisan passport:install
 # Lancer le projet sur le serveur de développment
 php artisan serve --host=localhost
+```
+
+## Lignes de commande
+```bash
+# Lancer les tests
+./vendor/bin/phpunit
 ```
