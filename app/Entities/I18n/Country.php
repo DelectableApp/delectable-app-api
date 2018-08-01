@@ -15,6 +15,7 @@ class Country extends Model
 {
 
     public $timestamps = true;
+    protected $primaryKey = 'country_id';
     protected $fillable = [
         'country_name',
         'country_legal_age',

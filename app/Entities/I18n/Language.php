@@ -15,12 +15,9 @@ use Illuminate\Database\Eloquent\Model;
 class Language extends Model
 {
     public $timestamps = true;
+    protected $primaryKey = 'language_id';
     protected $fillable = [
         'language_name',
         'language_read_direction',
     ];
-    public function user()
-    {
-        return $this->belongsTo(User::class, 'user_id');
-    }
 }

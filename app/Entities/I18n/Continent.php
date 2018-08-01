@@ -14,12 +14,9 @@ use Illuminate\Database\Eloquent\Model;
 class Continent extends Model
 {
     public $timestamps = true;
+    protected $primaryKey = 'continent_id';
     protected $fillable = [
         'continent_name',
     ];
 
-    public function country()
-    {
-        return $this->belongsTo(Country::class, 'country_id');
-    }
 }

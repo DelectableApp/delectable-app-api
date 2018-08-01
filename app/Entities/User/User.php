@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Entities\User;
 
 use App\Entities\Asset\Image;
 use App\Entities\I18n\Country;
@@ -21,6 +21,7 @@ class User extends Authenticatable
      */
 
     public $timestamps = true;
+    protected $primaryKey = 'user_id';
     protected $fillable = [
         'user_first_name',
         'user_last_name',
@@ -47,7 +48,6 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-        'remember_token',
         'remember_token',
     ];
     public function avatar()
@@ -93,8 +93,8 @@ class User extends Authenticatable
     {
         return $this->language()->associate($language_id);
     }
- public function setRole($roleId)
+ public function setRole($role_Id)
     {
-        return $this->role()->associate($roleId);
+        return $this->role()->associate($role_Id);
     }
 }
