@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\DB;
 
 class LanguageTableSeeder extends Seeder
 {
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
     public function run()
     {
         DB::table('languages')->delete();
@@ -22,6 +27,22 @@ class LanguageTableSeeder extends Seeder
         ]);
         Language::Create([
             'language_name' => 'Anglais',
+            'language_read_direction' => 'LTR',
+        ]);
+        Language::Create([
+            'language_name' => 'Italien',
+            'language_read_direction' => 'LTR',
+        ]);
+        Language::Create([
+            'language_name' => 'Espagnol',
+            'language_read_direction' => 'LTR',
+        ]);
+        Language::Create([
+            'language_name' => 'Allemand',
+            'language_read_direction' => 'LTR',
+        ]);
+        Language::Create([
+            'language_name' => 'Russe',
             'language_read_direction' => 'LTR',
         ]);
         Language::Create([

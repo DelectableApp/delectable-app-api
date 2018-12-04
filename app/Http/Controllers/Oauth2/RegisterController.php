@@ -19,6 +19,7 @@ class RegisterController extends Controller
             'user_email' => 'required|unique:users|email',
             'user_password' => 'required',
             'user_password_confirmation' => 'required|same:user_password',
+
         ]);
 
         // Si la validation échoue on retourne le(s) message(s) d'erreur
@@ -33,6 +34,13 @@ class RegisterController extends Controller
             'user_login' => $request->user_login,
             'user_email' => $request->user_email,
             'password' => Hash::make($request->user_password),
+            'user_address' => $request->user_adress,
+            'user_gender' => $request->user_adress,
+            'user_birth_date' => $request->user_birth_date,
+            'user_phone' => $request->user_phone,
+            'user_description' => $request->user_description,
+            'user_slug' => '',
+
 
         ]);
 
@@ -42,6 +50,12 @@ class RegisterController extends Controller
             'user_login' => $user->user_login,
             'user_email' => $user->user_email,
             'user_token' => $user->createToken('delectableToken')->accessToken,
+            'user_address' => $request->user_adress,
+            'user_gender' => $user->user_adress,
+            'user_birth_date' => $user->user_birth_date,
+            'user_phone' => $user->user_phone,
+            'user_description' => $user->user_description,
+            'user_slug' => $user->user_slug,
         ];
 
         return response()->json(['success' => $res], 200);
